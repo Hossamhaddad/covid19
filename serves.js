@@ -13,7 +13,8 @@ server.use(express.urlencoded({ extended: true }));
 server.use(override("method"));
 server.use(express.static("./public"));
 server.set("view engine", "ejs");
-const client = new pg.Client(process.env.DATABASE_URL);
+// const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
 server.get("/", homeHandler);
 server.post("/search", searchHandler);
