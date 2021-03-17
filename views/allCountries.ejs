@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/allcountries">All Countries</a>
+            <a href="/myrecords"> My Records</a>
+        </nav>
+    </header>
+
+    <main>
+        <%Countries.forEach(country => { %>
+            <div>
+            <ul> 
+                <li><p> country:  <%=country.country%> </p></li>
+                <li><p>total confirmed cases :<%=country.totalconfirmedcases%></p></li>
+                <li><p>total deaths cases :<%=country.totaldeathscases%></p></li>
+                <li><p>total recovered cases :<%=country.totalrecoveredcases  %></p></li>
+                <li><p>date :<%=country.date  %></p></li>
+            </ul>
+            </div>
+            <form action="/myrecords" method="post">
+            <input type="hidden" name="country" value="<%=country.country%>">
+            <input type="hidden" name="totalconfirmedcases" value="<%=country.totalconfirmedcases%>">
+            <input type="hidden" name="totaldeathscases" value="<%=country.totaldeathscases%>">
+            <input type="hidden" name="totalrecoveredcases" value="<%=country.totalrecoveredcases  %>">
+            <input type="hidden" name="date" value="<%=country.date  %>">
+            <button>Add To My Records</button>
+            </form>
+ <%       });  %> 
+
+    </main>
+    <footer>
+        <h4>All Rights Reserved 2020</h4>
+    </footer>
+</body>
+</html>

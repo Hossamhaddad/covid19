@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/allcountries">All Countries</a>
+            <a href="/myrecords"> My Records</a>
+        </nav>
+    </header>
+    <main>
+        <h2 id="home_H2">World Total Statistic</h2>
+  
+    <ul>
+<li><p> Total Confirmed: <%=Total.TotalConfirmed%> </p></li>
+<li><p>Total Deaths :<%=Total.TotalDeaths%> </p></li>
+<li><p>Total Recovered :<%=Total.TotalRecovered%> </p></li>
+
+    </ul>
+
+    <div>
+      <form action="/search" method="post">
+        <input type="text" name="search" placeholder="Add Country Name">
+        <input type="date" name="from">
+        <input type="date" name="until">
+        <button>Search</button>
+    </form>
+    </div>
+
+    </main>
+    <footer>
+        All Rights Reserved 2020
+    </footer>
+</body>
+</html>
